@@ -9,7 +9,8 @@ ERLC_OPTS = +debug_info \
             +warn_unused_function \
             +warn_deprecated_function \
             +warn_obsolete_guard \
-            +warn_unused_import
+            +warn_unused_import \
+            +warnings_as_errors
 
 COMPILE_FIRST = gen_server2 \
                 supervisor2 \
