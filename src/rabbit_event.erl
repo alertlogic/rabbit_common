@@ -160,5 +160,5 @@ event_cons(Type, Props, Ref) ->
     #event{type      = Type,
            props     = Props,
            reference = Ref,
-           timestamp = os:timestamp()}.
+           timestamp = erlang:timestamp()}.
 

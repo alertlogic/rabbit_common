@@ -90,7 +90,8 @@
 is_ssl(Sock) -> ?IS_SSL(Sock).
 
 ssl_info(Sock) when ?IS_SSL(Sock) ->
-    ssl:connection_info(Sock#ssl_socket.ssl);
+    ConnectionInformation = ssl:connection_information(Sock#ssl_socket.ssl),
+    {ok, {proplists:get_value(protocol, ConnectionInformation), proplists:get_value(cipher_suite, ConnectionInformation)}};
 ssl_info(_Sock) ->
     nossl.
 
